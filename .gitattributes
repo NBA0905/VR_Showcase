@@ -1,0 +1,11 @@
+# Ensure consistent line endings
+* text=auto
+
+# Unity asset files
+*.meta text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
+
+# Code files
+*.cs text eol=lf
