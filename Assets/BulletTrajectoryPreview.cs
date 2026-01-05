@@ -5,16 +5,21 @@ public class BulletTrajectoryPreview : MonoBehaviour
     [Header("References")]
     public LineRenderer lineRenderer;
     public Transform spawnPoint;
-    public Transform player; // XR Origin or camera offset
+    private Transform player; // XR Origin or camera offset
 
     [Header("Settings")]
     public int steps = 30;
     public LayerMask collisionLayers; // What should block the trajectory
 
-    private float bulletSpeed = 10f;
-    private float simulationTime = 2f;
+    //private float bulletSpeed = 10f;
+    //private float simulationTime = 2f;
     private bool showPreview = false;
 
+    private void Start()
+    {
+        //player = GameObject.FindWithTag("Player").transform;
+        player = Camera.main.transform;
+    }
     public void ShowPreview()
     {
         showPreview = true;
