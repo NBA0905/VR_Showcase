@@ -13,9 +13,21 @@ public class WaveManager : MonoBehaviour
     public List<Transform> spawnPoints; // Add any spawn points around the map
     public float waveDuration = 30f;
 
+    [Header("Wave Settings")]
+    public int maxWaves = 5;
+
+    [Header("Item Prefabs")]
+    public GameObject itemA;
+    public GameObject itemB;
+    public GameObject itemC;
+
+    [Header("Item Spawn")]
+    public Transform itemSpawnPoint; // where items appear
+
     private int currentWave = 0;
     private bool waveActive = false;
     private bool gameStarted = false; // NEW: prevents auto-start
+    private GameObject activeItem;
 
     public void StartWaves()
     {
@@ -28,6 +40,14 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator StartNextWave()
     {
+        // Stop if we've reached the max waves
+        if (currentWave >= maxWaves)
+        {
+            Debug.Log("All waves completed!");
+            yield break; // stops the coroutine permanently
+        }
+
+
         yield return new WaitForSeconds(2f); // small delay if needed
 
         currentWave++;
@@ -35,10 +55,13 @@ public class WaveManager : MonoBehaviour
 
         Debug.Log("Starting Wave " + currentWave);
         SpawnWave(currentWave);
+        SpawnRandomItem();
 
         yield return new WaitForSeconds(waveDuration);
 
         waveActive = false;
+
+        ClearWaveItem();
         StartCoroutine(StartNextWave());
     }
 
@@ -138,4 +161,30 @@ public class WaveManager : MonoBehaviour
         else if (r == 1) SpawnEnemy(hitterEnemy);
         else SpawnEnemy(laserEnemy);
     }
+
+    private void SpawnRandomItem()
+    {
+        // Safety: destroy previous item if something went wrong
+        if (activeItem != null)
+            Destroy(activeItem);
+
+        int r = Random.Range(0, 3);
+
+        GameObject prefab =
+            r == 0 ? itemA :
+            r == 1 ? itemB :
+                     itemC;
+
+        activeItem = Instantiate(prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
+    }
+
+    private void ClearWaveItem()
+    {
+        if (activeItem != null)
+        {
+            Destroy(activeItem);
+            activeItem = null;
+        }
+    }
+
 }

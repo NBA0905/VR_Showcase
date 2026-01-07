@@ -132,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       propertyPath: m_Name
-      value: Laser(V2)
+      value: Laser(V2)_Finished
       objectReference: {fileID: 0}
     - target: {fileID: 8632055958874330854, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
@@ -175,6 +175,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 517545784361216186}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -777745641572715419}
   m_SourcePrefab: {fileID: 100100000, guid: 96cd315e20eaf44479dc307a13844ccb, type: 3}
 --- !u!1 &8088656607262369409 stripped
 GameObject:
@@ -196,7 +200,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserRenderer: {fileID: 517545784361216186}
   firePoint: {fileID: 2742115635471307799}
-  player: {fileID: 0}
   laserLength: 20
   laserDuration: 2
   cooldownDuration: 2
@@ -310,6 +313,21 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-777745641572715419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088656607262369409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b447720f7424a784aa515a4df8831a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lr: {fileID: 517545784361216186}
+  damage: 5
+  rayDistance: 20
 --- !u!4 &8866319898034125883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96cd315e20eaf44479dc307a13844ccb,
