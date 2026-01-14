@@ -33,6 +33,7 @@ public class TeleportOrb : MonoBehaviour
 
     void OnGrab(SelectEnterEventArgs args)
     {
+        Debug.Log("Orb grabbed! Teleport enabled.");
         if (teleportController != null)
             teleportController.SetTeleportEnabled(true);
     }

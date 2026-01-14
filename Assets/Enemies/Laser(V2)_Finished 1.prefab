@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2193381074436678550
+--- !u!1 &117172033120323154
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2742115635471307799}
+  - component: {fileID: 7816013857561687761}
   m_Layer: 0
   m_Name: LaserPoint
   m_TagString: Untagged
@@ -16,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2742115635471307799
+--- !u!4 &7816013857561687761
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2193381074436678550}
+  m_GameObject: {fileID: 117172033120323154}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8866319898034125883}
+  m_Father: {fileID: 5182906960681303925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8971671310198397904
+--- !u!1001 &4640918832220969118
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -57,7 +57,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.04254985
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
@@ -132,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       propertyPath: m_Name
-      value: Laser(V2)_Finished
+      value: Laser(V2)_Finished 1
       objectReference: {fileID: 0}
     - target: {fileID: 8632055958874330854, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
@@ -165,41 +165,47 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2742115635471307799}
+      addedObject: {fileID: 7816013857561687761}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4723882038357254029}
+      addedObject: {fileID: 2794514234779653672}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 517545784361216186}
+      addedObject: {fileID: 8201672777412902881}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -777745641572715419}
+      addedObject: {fileID: 3125202047730090209}
   m_SourcePrefab: {fileID: 100100000, guid: 96cd315e20eaf44479dc307a13844ccb, type: 3}
---- !u!1 &8088656607262369409 stripped
+--- !u!4 &5182906960681303925 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96cd315e20eaf44479dc307a13844ccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 4640918832220969118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5523298561824826831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 96cd315e20eaf44479dc307a13844ccb,
     type: 3}
-  m_PrefabInstance: {fileID: 8971671310198397904}
+  m_PrefabInstance: {fileID: 4640918832220969118}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4723882038357254029
+--- !u!114 &2794514234779653672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088656607262369409}
+  m_GameObject: {fileID: 5523298561824826831}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 028c75ace0925da4599aa2af7a2bf875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserRenderer: {fileID: 517545784361216186}
-  firePoint: {fileID: 2742115635471307799}
+  laserRenderer: {fileID: 8201672777412902881}
+  firePoint: {fileID: 7816013857561687761}
   laserLength: 20
   laserDuration: 2
   cooldownDuration: 2
@@ -209,14 +215,14 @@ MonoBehaviour:
   maxDownwardTilt: 30
   tiltThreshold: 0.1
   tiltMultiplier: 20
---- !u!120 &517545784361216186
+--- !u!120 &8201672777412902881
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088656607262369409}
+  m_GameObject: {fileID: 5523298561824826831}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -313,24 +319,18 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &-777745641572715419
+--- !u!114 &3125202047730090209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088656607262369409}
+  m_GameObject: {fileID: 5523298561824826831}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b447720f7424a784aa515a4df8831a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lr: {fileID: 517545784361216186}
+  lr: {fileID: 8201672777412902881}
   damage: 5
   rayDistance: 20
---- !u!4 &8866319898034125883 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96cd315e20eaf44479dc307a13844ccb,
-    type: 3}
-  m_PrefabInstance: {fileID: 8971671310198397904}
-  m_PrefabAsset: {fileID: 0}

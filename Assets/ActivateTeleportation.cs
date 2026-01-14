@@ -22,18 +22,32 @@ public class ActivateTeleportation : MonoBehaviour
             return;
         }
 
-        bool isLeftHovering = leftRay.TryGetHitInfo(
-            out Vector3 leftPos,
-            out Vector3 leftNormal,
-            out int leftNo,
-            out bool leftValid
-        );
+        //bool isLeftHovering = leftRay.TryGetHitInfo(
+        //    out Vector3 leftPos,
+        //    out Vector3 leftNormal,
+        //    out int leftNo,
+        //    out bool leftValid
+        //);
 
-        leftTeleportation.SetActive(
-            !isLeftHovering &&
-            leftCancel.action.ReadValue<float>() == 0 &&
-            leftAction.action.ReadValue<float>() > 0.1f
-        );
+        //leftTeleportation.SetActive(
+        //    !isLeftHovering &&
+        //    leftCancel.action.ReadValue<float>() == 0 &&
+        //    leftAction.action.ReadValue<float>() > 0.1f
+        //);
+
+        // leftTeleportation.SetActive(
+        //    isLeftHovering &&           // Ray is hitting something
+        //    leftValid &&                // Hit is on valid teleport area
+        //    leftCancel.action.ReadValue<float>() == 0 &&
+        //    leftAction.action.ReadValue<float>() > 0.1f
+        //);
+
+        // Check if button is pressed
+        bool buttonPressed = leftAction.action.ReadValue<float>() > 0.1f;
+        bool cancelPressed = leftCancel.action.ReadValue<float>() > 0;
+
+        // Simple logic: Show ray when button is pressed and not cancelled
+        leftTeleportation.SetActive(buttonPressed && !cancelPressed);
     }
 
     // Called by teleport orb
